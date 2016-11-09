@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="build/browser.min.js"></script>
+  <script src="build/react-0.14.0.js"></script>
+  <script src="build/react-dom-0.14.0.js"></script>
+</head>
+<body>
+<div id="reactGame"></div>
+<script type="text/babel">
+
+var itemList = [
+        {
+           "name" : "四川香天下火锅(五角场店)",
+           "orderFood" : true,
+           "benefit" : true,
+           "remark"  : 4,
+           "price"   : 130,
+           "site"    : "五角场/大学区",
+           "attr"    : "火锅",
+           "atavar"  : "http://7xjv7m.com1.z0.glb.clouddn.com/item.png",
+           "detail"  : "89.9代100元"
+         },
+          {
+           "name" : "四川香天下火锅(五角场店)",
+           "orderFood" : true,
+           "benefit" : true,
+           "remark"  : 4,
+           "price"   : 130,
+           "site"    : "五角场/大学区",
+           "attr"    : "火锅",
+           "atavar"  : "../resource/item.png",
+           "detail"  : "89.9代100元"
+         },
+          {
+           "name" : "四川香天下火锅(五角场店)",
+           "orderFood" : true,
+           "benefit" : true,
+           "remark"  : 4,
+           "price"   : 130,
+           "site"    : "五角场/大学区",
+           "attr"    : "火锅",
+           "atavar"  : "http://7xjv7m.com1.z0.glb.clouddn.com/item.png",
+           "detail"  : "89.9代100元"
+         },
+          {
+           "name" : "四川香天下火锅(五角场店)",
+           "orderFood" : true,
+           "benefit" : true,
+           "remark"  : 4,
+           "price"   : 130,
+           "site"    : "五角场/大学区",
+           "attr"    : "火锅",
+           "atavar"  : "http://7xjv7m.com1.z0.glb.clouddn.com/item.png",
+           "detail"  : "89.9代100元"
+         },
+          {
+           "name" : "四川香天下火锅(五角场店)",
+           "orderFood" : true,
+           "benefit" : true,
+           "remark"  : 4,
+           "price"   : 130,
+           "site"    : "五角场/大学区",
+           "attr"    : "火锅",
+           "atavar"  : "http://7xjv7m.com1.z0.glb.clouddn.com/item.png",
+           "detail"  : "89.9代100元"
+         },
+         
+
+]
+;
+
+var GameBoard = React.createClass({
+        getInitialState : function(){
+            return{
+               
+            }
+        },
+        gameHandle : function(e){ 
+    
+         },
+        componentDidMount : function(){
+        
+        },
+
+        render : function(){ 
+ 
+            return(
+                <ul className = "board">
+                        {
+                           itemList.map(function(item){
+                              return(
+                                <li className="item">
+
+                          <img src={item.atavar} className="atavar" /> 
+                          <div className="content left">
+    <p className="title">{item.name}</p> <span className={item.orderFood ? "orderFood left" :" "}></span> <span className={item.benefit ? "benefit left" :" "}></span>
+
+    <div className="clear"></div>
+    <div>
+        <span className={item.remark ? ("remark" + item.remark ) : "remark"}></span>
+    <span className="price">¥ {item.price}/人</span>
+    </div>
+    
+    <div className="martop"> <span className="site">{item.site}</span>
+    <span className="attr">{item.attr}</span></div>
+   
+    <i className="separate"></i>
+    <p className="detail">{item.detail} <i className="enter"></i> </p>
+    <i class="separate"></i>
+  
+                          </div>
+                           <div className="clear"></div>
+                                </li>
+
+                                )
+                           })
+                        }  
+                </ul>
+              )
+        }
+})
+
+ReactDOM.render(<GameBoard/>,document.getElementById("reactGame"));
+
+</script>
+</body>
+</html>
